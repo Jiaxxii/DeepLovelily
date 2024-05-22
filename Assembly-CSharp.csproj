@@ -45,14 +45,23 @@
     <Analyzer Include="F:\Unity\Editor\2022.3.14f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateVector2.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateFloat.cs" />
      <Compile Include="Assets\WorkSpace\Expand.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleGameRunTest.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleContentRoot.cs" />
      <Compile Include="Assets\WorkSpace\Global\GlobalResource.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateVector3.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpGet.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateColor.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleTransformInfo.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\Lerp.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleBodyType.cs" />
      <Compile Include="Assets\WorkSpace\StructData\TransformInfo.cs" />
      <Compile Include="Assets\WorkSpace\IMove.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplate.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpSet.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\Lerp\ILerpValue.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleUnit.cs" />
      <Compile Include="Assets\WorkSpace\SO\PreformScriptableObject.cs" />
      <Folder Include="Assets" />
@@ -63,7 +72,6 @@
      <Folder Include="Assets\Ma\Scene" />
      <Folder Include="Assets\WorkSpace" />
      <Folder Include="Assets\CG" />
-     <Folder Include="Assets\Images\ROLE\New Folder" />
      <Folder Include="Assets\Settings" />
      <None Include="Assets\Resources\yuk position.json" />
      <Folder Include="Assets\AddressableAssetsData\DataBuilders" />
@@ -78,6 +86,7 @@
      <None Include="Assets\Resources\sin position.json" />
      <Folder Include="Assets\Resources\Transform" />
      <Folder Include="Assets\Settings\Scenes" />
+     <Folder Include="Assets\WorkSpace\GameFunction\Lerp" />
      <Folder Include="Assets\Images\ROLE\sin" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Scenes\SampleScene" />
@@ -101,6 +110,7 @@
      <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
      <Folder Include="Assets\Images\ROLE\yuk" />
      <None Include="Assets\Resources\fgimage.json" />
+     <None Include="Assets\WorkSpace\逻辑梳理.txt" />
      <None Include="Assets\Resources\yzw position.json" />
      <None Include="Assets\Resources\Transform\sin faces test.json" />
      <None Include="Assets\Resources\ai faces.json" />

@@ -1,0 +1,32 @@
+﻿
+声明 {
+    1.所有动画的父类 <MoveLineBase> (实际可能不是这个名称)
+    2.<TReturn> 表示一个未知的返回值,他会在实际代码中确定
+    3.<TType> 表示一个未知的类型,他会在实际代码中确定
+    4.<..?> 表示个数不确定，但是至少有一个,他会在实际代码中确定
+    5.<..*> 表示个数不确定，可能一个也没有,他会在实际代码中确定
+}
+
+Lerp(()=>get, v => set = v, start).Link(v => set = v, start).Link(v => set = v, start).Link(v => set = v, start).EndValue(value);
+Lerp(()=>get, v => set = v, start, end).Link(v => set = v, start, end).Link(v => set = v, start, end).Link(v => set = v, start, end)
+
+
+// MoveLineBase 定义了一个可以执行移动，旋转
+// 关键成员: Start, End
+// 可以通过 [0-1] 的范围在 [Start-End] 之间差值
+// 提供一个默认时间流,这个时间流默认情况下在默认的时间中从 Start 向 End 靠近
+
+MoveLineBase 中包含不限于以下成员 {
+    (float start, float end, float duration){
+        
+    }
+}
+
+LinearDifferenceObject{
+    
+}
+
+
+行为流 {
+     
+ }
