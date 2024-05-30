@@ -42,5 +42,20 @@ namespace WorkSpace
 
         public static float Vector2Dot(this Vector2 vector) => vector.x * vector.y;
         public static float Vector3Dot(this Vector3 vector) => vector.x * vector.y * vector.z;
+
+        public static float MapRange(this float value, float sourceMin, float sourceMax, float targetMin, float targetMax)
+        {
+            return targetMin + (value - sourceMin) * (targetMax - targetMin) / (sourceMax - sourceMin);
+        }
+
+        public static float MapRange01(this float value, float sourceMin, float sourceMax)
+        {
+            return (value - sourceMin) / (sourceMax - sourceMin);
+        }
+
+        public static float Map01Range(this float value, float targetMin, float targetMax)
+        {
+            return targetMin + value * (targetMax - targetMin);
+        }
     }
 }

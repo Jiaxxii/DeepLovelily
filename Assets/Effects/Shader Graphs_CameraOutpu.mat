@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Edge1: 0.4
-    - _Edge2: 0.77
+    - _Edge2: 0.7
     - _Strength: 0
     m_Colors:
     - _SGF: {r: 0.299, g: 0.587, b: 0.114, a: 0}

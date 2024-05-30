@@ -1,6 +1,6 @@
 ﻿namespace WorkSpace.GameFunction.Lerp
 {
-    public abstract class LerpTemplate<TType> : ILerpValue
+    public abstract class LerpTemplate<TType> : IRange<TType>
     {
         private readonly LerpGet<TType> _getProperty;
         private readonly LerpSet<TType> _setProperty;
@@ -9,8 +9,11 @@
         public abstract float Value { get; set; }
 
 
-        public TType StartValue { get; }
-        public TType EndValue { get;  }
+        public TType BeginValue { get; }
+        public TType EndValue { get; }
+
+
+        public abstract TType Lerp(float t);
 
 
         public virtual TType Property
@@ -19,12 +22,12 @@
             set => _setProperty.Invoke(value);
         }
 
-        protected LerpTemplate(LerpGet<TType> getter, LerpSet<TType> setter, TType start, TType end)
+        protected LerpTemplate(LerpGet<TType> getter, LerpSet<TType> setter, TType begin, TType end)
         {
             _getProperty = getter;
             _setProperty = setter;
 
-            StartValue = start;
+            BeginValue = begin;
             EndValue = end;
         }
     }

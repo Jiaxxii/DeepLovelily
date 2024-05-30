@@ -4,17 +4,19 @@ namespace WorkSpace.GameFunction.Lerp
 {
     public class LerpTemplateColor : LerpTemplate<Color>
     {
-        public LerpTemplateColor(LerpGet<Color> getter, LerpSet<Color> setter, Color start, Color end) : base(getter, setter, start, end)
+        public LerpTemplateColor(LerpGet<Color> getter, LerpSet<Color> setter, Color begin, Color end) : base(getter, setter, begin, end)
         {
         }
 
         public override float Value
         {
-            get => (Mathf.Clamp01((Property.r - StartValue.r) / (EndValue.r - StartValue.r)) +
-                    Mathf.Clamp01((Property.g - StartValue.g) / (EndValue.g - StartValue.g)) +
-                    Mathf.Clamp01((Property.b - StartValue.b) / (EndValue.b - StartValue.b))) / 3f;
+            get => (Mathf.Clamp01((Property.r - BeginValue.r) / (EndValue.r - BeginValue.r)) +
+                    Mathf.Clamp01((Property.g - BeginValue.g) / (EndValue.g - BeginValue.g)) +
+                    Mathf.Clamp01((Property.b - BeginValue.b) / (EndValue.b - BeginValue.b))) / 3f;
 
-            set => Property = Color.Lerp(StartValue, EndValue, value);
+            set => Lerp(value);
         }
+
+        public override Color Lerp(float t) => Property = Color.Lerp(BeginValue, EndValue, t);
     }
 }
