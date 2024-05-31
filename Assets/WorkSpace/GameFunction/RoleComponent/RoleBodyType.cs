@@ -23,7 +23,7 @@ namespace WorkSpace.GameFunction.RoleComponent
                 Debug.LogWarning("精灵图与位置信息的长度不是一致的，这可能不是预期的!");
             }
 
-            AutoFill(sprite.Length);
+            _ = AutoFill(sprite.Length);
 
             for (var i = 0; i < sprite.Length; i++)
             {

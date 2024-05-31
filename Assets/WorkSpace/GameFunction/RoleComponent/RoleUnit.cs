@@ -20,7 +20,8 @@ namespace WorkSpace.GameFunction.RoleComponent
             SpriteContent = GetComponent<Image>();
             return this;
         }
-
+        
+        
         public void Display(Sprite sprite, TransformInfo transformInfo)
         {
             SetStyle(sprite, transformInfo.Size, transformInfo.Position);

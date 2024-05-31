@@ -57,5 +57,7 @@ namespace WorkSpace
         {
             return targetMin + value * (targetMax - targetMin);
         }
+        
+        
     }
 }

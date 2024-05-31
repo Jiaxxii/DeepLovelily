@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
-using WorkSpace.StructData;
+using WorkSpace.Global.CharacterIllustration;
 using WorkSpace.StructData.SO;
 
 namespace WorkSpace.GameFunction.RoleComponent
@@ -31,7 +30,7 @@ namespace WorkSpace.GameFunction.RoleComponent
         /// key:图片源名称
         /// value:图片引用(未加载)
         /// </summary>
-        private readonly Dictionary<string, ResourceLocation> _refAssetsMap = new();
+        private readonly Dictionary<string, SpriteResourceLoader> _refAssetsMap = new();
 
         // 用于存放上一次的使用的 typeCode
         // 如果使用时有相等则不再重复加载
@@ -117,7 +116,7 @@ namespace WorkSpace.GameFunction.RoleComponent
             {
                 // assetRef.PrimaryKey 返回图片的源名称
                 // (前提需要图片命名遵循本项目的命名规范)
-                _refAssetsMap.Add(assetRef.PrimaryKey, new ResourceLocation(assetRef));
+                _refAssetsMap.Add(assetRef.PrimaryKey, new SpriteResourceLoader(assetRef));
             }
 
             State = RefState.Ok;
@@ -236,6 +235,7 @@ namespace WorkSpace.GameFunction.RoleComponent
                 yield return resource.GetAsync(sprite => onItemCompletion?.Invoke(sprite));
             }
         }
+        
 
 
         /// <summary>
@@ -262,82 +262,7 @@ namespace WorkSpace.GameFunction.RoleComponent
             _spriteAssetsTransformInfoMap = RoleTransformInfo.Load(transformInfoDataJson);
             return this;
         }
+        
 
-
-        public class ResourceLocation
-        {
-            public ResourceLocation(IResourceLocation resourceLocation)
-            {
-                Resource = resourceLocation;
-                IsRead = false;
-            }
-
-            public IResourceLocation Resource { get; }
-            public bool IsRead { get; private set; }
-
-            private Sprite _target;
-
-
-            public IEnumerator GetAsync(Action<Sprite> onCompletion)
-            {
-                if (IsRead)
-                {
-                    onCompletion.Invoke(_target);
-                    yield break;
-                }
-
-                var spriteHandle = Addressables.LoadAssetAsync<Sprite>(Resource);
-                yield return spriteHandle;
-
-                Debug.Assert(spriteHandle.Status == AsyncOperationStatus.Succeeded, $"加载精灵\"{Resource.PrimaryKey}\"时发生异常!");
-
-                _target = spriteHandle.Result;
-                IsRead = true;
-
-                onCompletion.Invoke(spriteHandle.Result);
-                Addressables.Release(spriteHandle);
-            }
-
-            public async Task<Sprite> GetAsync()
-            {
-                if (IsRead)
-                {
-                    return _target;
-                }
-
-                var spriteHandle = Addressables.LoadAssetAsync<Sprite>(Resource);
-
-                var sprite = await spriteHandle.Task;
-                IsRead = true;
-                _target = sprite;
-
-                Addressables.Release(spriteHandle);
-
-                return sprite;
-            }
-        }
-
-        public enum RefState
-        {
-            /// <summary>
-            /// 未开始
-            /// </summary>
-            None,
-
-            /// <summary>
-            /// 加载中
-            /// </summary>
-            Loading,
-
-            /// <summary>
-            /// 完成
-            /// </summary>
-            Ok,
-
-            /// <summary>
-            /// 失败
-            /// </summary>
-            Fail
-        }
     }
 }

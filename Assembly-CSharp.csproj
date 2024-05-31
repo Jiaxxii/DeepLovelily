@@ -45,22 +45,28 @@
     <Analyzer Include="F:\Unity\Editor\2022.3.14f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\WorkSpace\GameFunction\CharacterProfilePicture\CharacterProfilePictureContentRoot.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateVector2.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateFloat.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\IRange.cs" />
      <Compile Include="Assets\WorkSpace\Expand.cs" />
+     <Compile Include="Assets\WorkSpace\Global\CharacterIllustration\SpriteAssetLoader.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleGameRunTest.cs" />
+     <Compile Include="Assets\WorkSpace\Global\CharacterIllustration\ResourcesLocation.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleContentRoot.cs" />
      <Compile Include="Assets\WorkSpace\Global\GlobalResource.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\BehavioralFlow\KeyFrameAnimator.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateVector3.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpGet.cs" />
+     <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\IRefResource.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\WorkSpace\Global\CharacterIllustration\RefState.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\BehavioralFlow\TimeInputMode.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\LerpTemplateColor.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
+     <Compile Include="Assets\WorkSpace\Global\CharacterIllustration\SpriteResourceManager.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\RoleComponent\RoleTransformInfo.cs" />
      <Compile Include="Assets\WorkSpace\GameFunction\Lerp\ILerpObject.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
@@ -92,6 +98,7 @@
      <Folder Include="Assets\Settings" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Resources\yuk position.json" />
+     <Folder Include="Assets\WorkSpace\Global\CharacterIllustration" />
      <Folder Include="Assets\AddressableAssetsData\DataBuilders" />
      <None Include="Assets\Resources\Transform\ai faces test.json" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
@@ -123,6 +130,7 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <Folder Include="Assets\WorkSpace\GameFunction\DialogBox" />
      <Folder Include="Assets\WorkSpace\Global" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -139,6 +147,7 @@
      <None Include="Assets\Resources\ai position.json" />
      <None Include="Assets\Resources\Transform\yuk faces.json" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\WorkSpace\GameFunction\CharacterProfilePicture" />
      <None Include="Assets\Resources\Transform\ai faces.json" />
      <Folder Include="Assets\Images" />
      <Folder Include="Assets\Images\ROLE" />
